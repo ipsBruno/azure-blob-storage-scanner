@@ -27,7 +27,7 @@ O **findUri** é a lista real de buckets encontrados
 
 Ao contrário do meu outro scanner para S3 Amazon AWS este aqui não precisa de proxy porque precisamos apenas verificar se o domínio existe com o DNS Server
 
-Tornando o scanner muito mais rápido e eficaz.
+Tornando o scanner muito mais rápido e eficaz: Pra ter uma noção em 10 minutos deu pra fazer scanner em mais de 70 mil domínios diferentes.
 
 
 
