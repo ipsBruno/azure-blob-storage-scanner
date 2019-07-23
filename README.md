@@ -1,4 +1,4 @@
-﻿# scanner-s3-buckets
+﻿# scanner-azure-blob-storage
 
 
 Isso é uma ferramenta em NodeJS pra fazer scanner em Storage da Azure de sites na internet
