@@ -7,7 +7,7 @@
  \___/\_|    \____/\____/\_| \_|\___/\_| \_/\___/ 
  
  Tool: azure-blob-scanner
- Date: 30/06/2019
+ Date: 23/07/2019
  */
 
 var fs = require('fs');
@@ -24,7 +24,7 @@ var dns = require('dns');
 var curTHREADS = 0
 var curCHECK = -1
 
-var maxConcurrentConnection = 5
+var maxConcurrentConnection = 500
 var currentConnection = 0
 var checkeds = 0
 
