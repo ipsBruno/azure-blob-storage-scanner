@@ -72,9 +72,12 @@ function requestArray(array, i) {
     return curTHREADS--;
 }
 
+/*
+Definir nameservers: opcional
 dns.setServers([
    '4.4.4.4', '8.8.8.8', '8.8.4.4','208.67.222.222','208.67.220.220','189.38.95.95','189.38.95.96','209.244.0.3','209.244.0.4'
 ]);
+*/
 
 function checkS3(name) {
     checkeds++
