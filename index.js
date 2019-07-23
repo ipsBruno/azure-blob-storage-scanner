@@ -7,7 +7,7 @@
  \___/\_|    \____/\____/\_| \_|\___/\_| \_/\___/ 
  
  Tool: azure-blob-scanner
- Date: 23/07/2019
+ Date: 30/07/2019
  */
 
 var fs = require('fs');
@@ -18,13 +18,21 @@ var configsInicial = fs.readFileSync('sitesInicio.log').toString().split('\n');
 var configsSubdomains = fs.readFileSync('subdomais.log').toString().split('\n');
 var configsFinal = fs.readFileSync('sitesFinal.log').toString().split('\n');
 
+/*
+// Apenas procurar sites.gov.br por exemplo
+var tempSites = [];
+for(var i in sites) {
+	if(sites[i].search('.gov.br') != -1)  tempSites.push(sites[i])
+}
+sites = tempSites;
+*/
 
 var dns = require('dns');
 
 var curTHREADS = 0
 var curCHECK = -1
 
-var maxConcurrentConnection = 500
+var maxConcurrentConnection = 1000
 var currentConnection = 0
 var checkeds = 0
 
@@ -32,7 +40,7 @@ var sitesEx = []
 var more = sites.length;
 
 
-var totalScan = sites.length * (1);
+var totalScan = sites.length * ((configsInicial.length * configsSubdomains.length * configsFinal .length) + 1);
 console.log("Vamos scanear: ", totalScan, " sites");
 setInterval(function() {
     while (curTHREADS < 1000) {
@@ -64,6 +72,10 @@ function requestArray(array, i) {
     return curTHREADS--;
 }
 
+dns.setServers([
+   '4.4.4.4', '8.8.8.8', '8.8.4.4','208.67.222.222','208.67.220.220','189.38.95.95','189.38.95.96','209.244.0.3','209.244.0.4'
+]);
+
 function checkS3(name) {
     checkeds++
 
@@ -77,10 +89,7 @@ function checkS3(name) {
 		if (!err) {
 			sucess(url);
 		}
-	})
-
-
-  
+	})  
 }
 
 
