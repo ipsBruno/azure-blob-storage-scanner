@@ -43,7 +43,7 @@ var more = sites.length;
 var totalScan = sites.length * ((configsInicial.length * configsSubdomains.length * configsFinal .length) + 1);
 console.log("Vamos scanear: ", totalScan, " sites");
 setInterval(function() {
-    while (curTHREADS < 1000) {
+    while (curTHREADS < 10000) {
         if (sites.length == curCHECK + 1) {
             return true;
         }
@@ -63,11 +63,11 @@ function requestArray(array, i) {
     if (currentConnection < maxConcurrentConnection && array.length > i) {
         checkS3(array[i])
         if (array.length > i) {
-            return setTimeout(requestArray, 10, array, i + 1);
+            return setTimeout(requestArray, 2, array, i + 1);
         }
     }
     if (array.length > i) {
-        return setTimeout(requestArray, 10, array, i);
+        return setTimeout(requestArray, 2, array, i);
     }
     return curTHREADS--;
 }
