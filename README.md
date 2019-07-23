@@ -17,22 +17,21 @@ https://www.exfiltrated.com/research/HackingTheClouds.pdf
 **subdomais.log** terá uma lista de subdomínios pra acrescentar em nosso bruteforce<br/>
 <br/><br/>
 Apenas dê **node index.js** após instalar as bibliotecas necessárias
-<br>
-<br>
+<br/>
+<br/><br/>
 Vai ser gerado 1 arquivo findUris.log
-<br><br>
+<br/><br/>
 O **findUri.log** é a lista real de buckets encontrados
-<br>
-<br>
+<br/>
+<br/><br/>
 Após isso, também coloquei uma ferramenta pra escanear os resources desses buckets, afim de encontrar resources abertos. Tendo já sua lista findUri.log em mãos, rode  **node resources.js**
-<br>
+<br/>.<br/>.<br/>
 Ele irá procurar por resources abertos dentro da nossa **lista findUri.log**
-<br>
+<br/>.<br/>.<br/>
 Sua lista final será: **findResources.log** ali conterá todos arquivos abertos que foram encotrados no Windows Azure 
-<br><br>
+<br/>.<br/>.
 :)
-
-<br><br><br>
+<br/>.<br/>.<br/>
 ## Name Servers
 
 Ao contrário do meu outro scanner para S3 Amazon AWS este aqui não precisa de proxy porque precisamos apenas verificar se o domínio existe com o DNS Server
